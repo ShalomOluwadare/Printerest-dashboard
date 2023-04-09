@@ -134,6 +134,8 @@ a {
   display: grid;
   grid-template-rows: repeat(auto-fit, 1fr);
   padding: 5px;
+  border-radius: 20px;
+  background-color: white;
 }
 .announce-content div {
   border-bottom: 2px solid var(--background-color-main);
