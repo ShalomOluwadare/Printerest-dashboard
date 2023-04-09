@@ -1,14 +1,23 @@
 :root {
   --border-length: 0.8rem;
+  --background-color-main: #450a0a;
+  --background-color-side: #7f1d1d;
+  --background-color-other: #cbd5e1;
 }
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
+#announcement h2,
+.project-header {
+  text-decoration: underline;
+}
 button {
   width: 60px;
-  border-radius: 0.3rem;
+  border-radius: 1.5rem;
+  background-color: var(--background-color-main);
+  color: white;
   height: 30px;
 }
 img {
@@ -17,32 +26,54 @@ img {
 #container {
   display: grid;
   grid-template-columns: 0.5fr 2fr 0.5fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
   height: 100vh;
 }
 input {
   width: 200px;
   height: 20px;
+  border-radius: 9px;
 }
 .profile-pic,
 .new-post {
+  display: flex;
+  gap: 5px;
+  margin: 15px;
   justify-self: flex-end;
 }
+.welcome-msg {
+  display: flex;
+  font-size: 1em;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.welcome-msg img {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+}
+.profile-pic img {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+}
 #header {
-  border: 5px solid blue;
   grid-column: 2/-1;
   display: grid;
   grid-template: 1fr 1fr/1fr 1fr;
-  padding: 20px;
-  top: 0px;
-  position: sticky;
+  padding: 10px;
+  background-color: var(--background-color-side);
 }
 #header div {
   display: flex;
+  gap: 10px;
+  color: white;
 }
 #sidebar {
-  border: 5px solid purple;
   grid-row: 1/-1;
+  background-color: var(--background-color-main);
 }
 .activity div,
 .dashboard,
@@ -50,19 +81,21 @@ input {
   display: flex;
   margin: 5px;
   gap: 5px;
+  color: white;
 }
 .activity,
 .about,
 .dashboard {
-  border: 5px solid rosybrown;
   width: 10rem;
   margin: 20px;
 }
+#Projects {
+  padding: 10px;
+}
 .project-content {
-  border: 5px solid green;
   grid-column: 2;
   gap: 20px;
-  padding: 10px;
+  padding: 20px;
   display: grid;
   grid-template-rows: auto 1fr 1fr;
   grid-auto-rows: 1fr;
@@ -73,8 +106,9 @@ input {
 }
 .card {
   padding: 1em;
-  border-left: 10px solid rosybrown;
+  border-left: 10px solid var(--background-color-main);
   border-radius: 1rem;
+  box-shadow: 0 0 5px 1px black;
 }
 .actions {
   display: flex;
@@ -85,9 +119,14 @@ input {
   display: flex;
   flex-direction: column;
   grid-column: 3;
-  border: 5px solid black;
   padding: 10px;
   gap: var(--border-length);
+  background-color: var(--background-color-other);
+}
+#announcement img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
 }
 .trending-content,
 .announce-content {
@@ -97,13 +136,14 @@ input {
   padding: 5px;
 }
 .announce-content div {
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid var(--background-color-main);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .trending-content div {
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid var(--background-color-main);
   display: flex;
+  gap: 10px;
   align-items: center;
 }
